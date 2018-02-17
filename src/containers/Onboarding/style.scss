@@ -1,0 +1,41 @@
+.page-onboarding {
+  h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    margin-top: 3rem;
+
+    text-align: center;
+  }
+
+  .onboarding {
+    text-align: center;
+
+    p {
+      font-family: 'Nunito', sans-serif;
+      color: #555;
+      font-size: 1.2rem;
+    }
+
+    form {
+      margin-top: 1.6rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+
+      }
+    }
+
+    .btn-primary {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.55rem 2rem 0.5rem;
+    }
+  }
+}

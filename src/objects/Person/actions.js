@@ -16,7 +16,8 @@ export const addPersonEpic = action$ =>
     .ofType(ADD_PERSON)
     .flatMap(action =>
       Observable.concat(
-        Observable.of(addInquiry('Gender?')),
-        Observable.of(addInquiry('Marital status?'))
+        Observable.of(addInquiry('Age?', 'number')),
+        Observable.of(addInquiry('Gender?', 'choices')),
+        Observable.of(addInquiry('Marital status?', 'choices'))
       )
     );

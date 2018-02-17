@@ -1,7 +1,7 @@
 
 export const ADD_INQUIRY = 'ADD_INQUIRY';
 
-export function addInquiry(questionName, isRequired) {
+export function addInquiry(questionName, questionType, isRequired) {
   if (isRequired === undefined) {
     isRequired = false;
   }
@@ -9,6 +9,7 @@ export function addInquiry(questionName, isRequired) {
   return {
     type: ADD_INQUIRY,
     questionName,
+    questionType,
     isRequired
   }
 }

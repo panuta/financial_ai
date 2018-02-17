@@ -1,13 +1,61 @@
 .page-main {
-  text-align: left;
+  background-color: #f4f4f4;
 
-  .navbar {
-    background-color: #19367d;
-    height: 40px;
+  .sidebar {
+    background-color: #31445a;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    text-align: left;
 
-    .navbar-brand {
-      font-size: 1.1rem;
+    .brand {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: #fff;
+      padding: 0.8rem 0;
+      text-align: center;
+
+      svg {
+        margin-right: 5px;
+      }
     }
+
+    .nav {
+      .nav-item {
+        .nav-link {
+          font-family: 'Nunito', sans-serif;
+          font-weight: 200;
+          font-size: 1.05rem;
+          color: #d5dde8;
+          margin-bottom: 0.2rem;
+          padding: 0.7rem 0 0.7rem 15px;
+
+          .link-icon {
+            color: #d5dde8;
+            margin-right: 6px;
+          }
+
+          &:hover {
+            background-color: #1f2b39;
+          }
+
+          &.active {
+            background-color: #1f2b39;
+            color: #fff;
+
+            .link-icon {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+
   }
 
   h2 {

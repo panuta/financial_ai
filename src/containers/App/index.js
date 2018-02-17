@@ -5,7 +5,6 @@ import Onboarding from '../Onboarding';
 import MainPage from '../MainPage';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './style.css';
 
 
 class App extends Component {

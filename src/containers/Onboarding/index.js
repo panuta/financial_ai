@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Helmet} from "react-helmet";
 
-import './style.css';
+import './style.scss';
 import { onboardUser } from './actions';
 
 
@@ -40,9 +41,13 @@ class Onboarding extends Component {
 
   render() {
     return (
-      <div className='container-fluid page-onboarding'>
+      <div className='container-fluid'>
+        <Helmet>
+          <body className='page-onboarding' />
+        </Helmet>
+
         <h1>Welcome to Financial AI</h1>
-        <div>
+        <div className='onboarding'>
           <p>To get started, please enter your name below.</p>
           <div className='row justify-content-md-center'>
             <div className='col-md-4'>
