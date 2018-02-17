@@ -43,14 +43,18 @@ class MainPage extends Component {
             <main role='main' className='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4'>
               <section className='section-inquiry'>
                 <h2>Questions</h2>
-                <ul>
-                  {inquiry.map((item, index) =>
-                    <li className='question' key={index}>
-                      <div className='question_name'>{item.question_name}</div>
-                      <span className='answer'><a href="#">answer</a></span>
-                    </li>
-                  )}
-                </ul>
+                {inquiry.requests ? (
+                  <ul>
+                    {inquiry.requests.map((item, index) =>
+                      <li className='question' key={index}>
+                        <div className='question_name'>{item.title}</div>
+                        <span className='answer'><a href="#">answer</a></span>
+                      </li>
+                    )}
+                  </ul>
+                ) : (
+                  <div>No requests</div>
+                )}
               </section>
             </main>
           </div>

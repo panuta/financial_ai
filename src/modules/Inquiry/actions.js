@@ -1,6 +1,10 @@
 
 export const ADD_INQUIRY = 'ADD_INQUIRY';
 
+export const REQUEST_FOR_DATA = 'REQUEST_FOR_DATA';
+
+
+
 export function addInquiry(questionName, questionType, isRequired) {
   if (isRequired === undefined) {
     isRequired = false;
@@ -13,3 +17,12 @@ export function addInquiry(questionName, questionType, isRequired) {
     isRequired
   }
 }
+
+export function requestForData(title, fields) {
+  return {
+    type: REQUEST_FOR_DATA,
+    title,
+    fields
+  }
+}
+
