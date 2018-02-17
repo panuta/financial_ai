@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 
 import App from './containers/App';
-
-import registerServiceWorker from './registerServiceWorker';
 
 import configureStore from './store/configureStore';
 const store = configureStore({
@@ -14,9 +13,13 @@ const store = configureStore({
 });
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <AppContainer>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </AppContainer>,
   document.getElementById('root'));
 
-registerServiceWorker();
+if (module.hot) {
+  module.hot.accept();
+}

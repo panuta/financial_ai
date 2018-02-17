@@ -1,0 +1,33 @@
+.page-main {
+  text-align: left;
+
+  .navbar {
+    background-color: #19367d;
+    height: 40px;
+
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  .section-inquiry {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .question {
+      border: 1px solid #ccc;
+      list-style: none;
+      margin-bottom: 1rem;
+      padding: 0.7rem 1rem;
+    }
+  }
+}
+

@@ -12,17 +12,19 @@ const enhancer = compose(
 );
 
 export default function configureStore(initialState) {
-  const store = createStore(
-    rootReducers,
-    initialState,
-
+  const store = (module.hot && module.hot.data && module.hot.data.store)
+    ? module.hot.data.store
+    : createStore(
+      rootReducers,
+      initialState,
     enhancer);
 
-  // if (module.hot) {
-  //   module.hot.accept('./reducers', () =>
-  //     store.replaceReducer(require('./reducers')/*.default if you use Babel 6+ */)
-  //   );
-  // }
+  if (module.hot) {
+    module.hot.accept('./rootReducers', () => {
+      const nextRootReducer = require('./rootReducers');
+      store.replaceReducer(nextRootReducer);
+    });
+  }
 
   return store;
 }
