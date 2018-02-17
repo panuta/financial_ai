@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from './containers/App';
-import DevTools from './store/DevTools';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -16,10 +15,7 @@ const store = configureStore({
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
-      <App />
-      <DevTools />
-    </div>
+    <App />
   </Provider>,
   document.getElementById('root'));
 

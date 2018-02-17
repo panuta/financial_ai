@@ -1,8 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
-import DevTools from './DevTools';
-
 import rootReducers from './rootReducers';
 import rootEpics from './rootEpics';
 
@@ -10,13 +8,14 @@ const enhancer = compose(
   applyMiddleware(
     createEpicMiddleware(rootEpics),
   ),
-  DevTools.instrument()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default function configureStore(initialState) {
   const store = createStore(
     rootReducers,
     initialState,
+
     enhancer);
 
   // if (module.hot) {
