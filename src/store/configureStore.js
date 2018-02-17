@@ -3,19 +3,21 @@ import { createEpicMiddleware } from 'redux-observable';
 
 import DevTools from './DevTools';
 
-import * as reducers from './reducers'
-import { rootEpic } from './epics';
-
-const rootReducer = combineReducers({ ...reducers });
-const epicMiddleware = createEpicMiddleware(rootEpic);
+import rootReducers from './rootReducers';
+import rootEpics from './rootEpics';
 
 const enhancer = compose(
-  applyMiddleware(epicMiddleware, ),
+  applyMiddleware(
+    createEpicMiddleware(rootEpics),
+  ),
   DevTools.instrument()
 );
 
 export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState, enhancer);
+  const store = createStore(
+    rootReducers,
+    initialState,
+    enhancer);
 
   // if (module.hot) {
   //   module.hot.accept('./reducers', () =>

@@ -1,13 +1,10 @@
 import { combineReducers } from 'redux'
 
-import { questions_reducer } from './Questions';
-import { reducers as person_reducers } from './Person/reducers';
-// import { bank_account_reducer } from './BankAccount';
+import person_reducer from './Person/reducers';
+import assets_reducers from './Assets/reducers';
 
 
 export default combineReducers({
-  'questions': questions_reducer,
-
-  'person': person_reducers,
-  // 'bank_account': bank_account_reducer,
+  'person': person_reducer,
+  'assets': assets_reducers,
 });

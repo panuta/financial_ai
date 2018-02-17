@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import './style.css';
-import { onboardUser } from '../../store/actions/app';
+import { onboardUser } from './actions';
 
 
 let onboardingHandler = function(dispatch) {

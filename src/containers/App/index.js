@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Onboarding from './containers/Onboarding';
-import MainPage from './containers/MainPage';
+import Onboarding from '../Onboarding';
+import MainPage from '../MainPage';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './style.css';
 
 
 class App extends Component {
