@@ -1,8 +1,12 @@
+.page-main {
+    text-align: left;
+}
+
 .page-main h2 {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-.page-main {
+.page-main .section-inquiry {
 
 }

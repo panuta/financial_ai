@@ -1,5 +1,5 @@
 import 'rxjs';
-import { ADD_QUESTION } from "../../../modules/Inquiry/actions";
+import { ADD_INQUIRY } from "../../../modules/Inquiry/actions";
 
 export const ADD_BANK_ACCOUNT = 'ADD_BANK_ACCOUNT';
 
@@ -13,4 +13,4 @@ export function addBankAccount(name) {
 export const addBankAccountEpic = action$ =>
   action$
     .ofType(ADD_BANK_ACCOUNT)
-    .mapTo({ type: ADD_QUESTION, question_name:'What bank?' });
+    .mapTo({ type: ADD_INQUIRY, questionName:'What bank?' });

@@ -1,5 +1,6 @@
 import 'rxjs';
-import { ADD_QUESTION } from "../../modules/Inquiry/actions";
+import { Observable } from 'rxjs';
+import { addInquiry } from "../../modules/Inquiry/actions";
 
 export const ADD_PERSON = 'ADD_PERSON';
 
@@ -13,4 +14,9 @@ export function addPerson(name) {
 export const addPersonEpic = action$ =>
   action$
     .ofType(ADD_PERSON)
-    .mapTo({ type: ADD_QUESTION, question_name:'What if?' });
+    .flatMap(action =>
+      Observable.concat(
+        Observable.of(addInquiry('Gender?')),
+        Observable.of(addInquiry('Marital status?'))
+      )
+    );

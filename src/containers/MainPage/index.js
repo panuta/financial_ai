@@ -10,6 +10,8 @@ class MainPage extends Component {
   }
 
   render() {
+    const { inquiry } = this.props;
+
     return (
       <div className='container-fluid page-main'>
         <div className='row'>
@@ -22,7 +24,15 @@ class MainPage extends Component {
             <h2>Suggestions</h2>
           </div>
           <div className='col-6'>
-            <h2>Questions</h2>
+            <section className='section-inquiry'>
+              <h2>Questions</h2>
+              <ul>
+                {inquiry.map(
+                  (item, index) =>
+                    <li key={index}>{item.question_name}</li>
+                )}
+              </ul>
+            </section>
           </div>
         </div>
       </div>
@@ -30,4 +40,12 @@ class MainPage extends Component {
   }
 }
 
-export default connect()(MainPage);
+const mapStateToProps = state => {
+  return {
+    inquiry: state.inquiry
+  }
+};
+
+export default connect(
+  mapStateToProps,
+)(MainPage);

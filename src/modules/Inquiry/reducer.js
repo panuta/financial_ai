@@ -1,13 +1,13 @@
 
-import { ADD_QUESTION } from "./actions";
+import { ADD_INQUIRY } from "./actions";
 
 
 export default function reducer(state = [], action) {
   switch (action.type) {
-    case ADD_QUESTION:
+    case ADD_INQUIRY:
       return state.concat([{
-        'question_name': action.question_name,
-        'is_required': action.is_required,
+        'question_name': action.questionName,
+        'is_required': action.isRequired,
       }]);
     default:
       return state

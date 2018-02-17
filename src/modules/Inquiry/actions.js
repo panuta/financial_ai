@@ -1,10 +1,14 @@
 
-export const ADD_QUESTION = 'ADD_QUESTION';
+export const ADD_INQUIRY = 'ADD_INQUIRY';
 
-export function addQuestion(question_name, is_required) {
+export function addInquiry(questionName, isRequired) {
+  if (isRequired === undefined) {
+    isRequired = false;
+  }
+
   return {
-    type: ADD_QUESTION,
-    question_name,
-    is_required
+    type: ADD_INQUIRY,
+    questionName,
+    isRequired
   }
 }
