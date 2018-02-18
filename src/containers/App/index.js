@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { hot } from 'react-hot-loader'
 
 import Onboarding from '../Onboarding';
 import MainPage from '../MainPage';
@@ -13,7 +14,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-        {onboarding ? (
+        {onboarding === undefined || onboarding ? (
           <Onboarding/>
         ) : (
           <MainPage/>
@@ -29,6 +30,12 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(
+// export default connect(
+//   mapStateToProps,
+// )(App);
+
+// hot(module)(App)
+
+export default hot(module)(connect(
   mapStateToProps,
-)(App);
+)(App));

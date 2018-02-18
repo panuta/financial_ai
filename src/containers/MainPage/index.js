@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Helmet} from "react-helmet";
+import ReactModal from 'react-modal';
 
 import './style.scss';
 
@@ -8,6 +9,16 @@ import './style.scss';
 class MainPage extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showInquiryRequestModal: false
+    };
+
+    this.handleOpenInquiryRequestModal = this.handleOpenInquiryRequestModal.bind(this);
+  }
+
+  handleOpenInquiryRequestModal(e) {
+    this.setState({showInquiryRequestModal: true});
+    e.preventDefault();
   }
 
   render() {
@@ -23,7 +34,7 @@ class MainPage extends Component {
           <div className='row flex-nowrap no-gutters'>
             <div className='col-md-2 d-none d-md-block sidebar'>
               <div className="brand">
-                <i className='far fa-magic' /> Financial AI
+                <i className='far fa-magic' /> Financial AI tes
               </div>
               <ul className='nav flex-column'>
                 <li className='nav-item'>
@@ -48,7 +59,7 @@ class MainPage extends Component {
                     {inquiry.requests.map((item, index) =>
                       <li className='question' key={index}>
                         <div className='question_name'>{item.title}</div>
-                        <span className='answer'><a href="#">answer</a></span>
+                        <span className='answer'><a href="#" onClick={this.handleOpenInquiryRequestModal}>answer</a></span>
                       </li>
                     )}
                   </ul>
@@ -59,6 +70,10 @@ class MainPage extends Component {
             </main>
           </div>
         </div>
+
+        <ReactModal isOpen={this.state.showInquiryRequestModal} contentLabel="Minimal Modal Example">
+          <button >Close Modal</button>
+        </ReactModal>
       </div>
     );
   }

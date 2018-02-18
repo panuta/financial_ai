@@ -6,20 +6,12 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 
 import configureStore from './store/configureStore';
-const store = configureStore({
-  app: {
-    onboarding: true
-  }
-});
+
+let initialState = {};
+const store = configureStore(initialState);
 
 ReactDOM.render(
-  <AppContainer>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </AppContainer>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root'));
-
-if (module.hot) {
-  module.hot.accept();
-}
